@@ -20,7 +20,22 @@ export class CareerCard extends LitElement {
   }
 
   render() {
-    return html`<p></p>`;
+    if (!this.carrera) return html``;
+    return html`
+      <div class="overlay" @click=${this._cerrarModal}>
+        <div class="modal" @click=${e => e.stopPropagation()}>
+          <div class="header">
+            ${this.carrera.nombre}
+            <button @click=${this._cerrarModal}>✖</button>
+          </div>
+          <img src="${this.carrera.imagen}" alt="${this.carrera.nombre}">
+          <div class="content">
+            <p><strong>Facultad:</strong> ${this.carrera.facultad}</p>
+            <p>${this.carrera.descripcion}</p>
+          </div>
+        </div>
+      </div>
+    `;
   }
 }
 
