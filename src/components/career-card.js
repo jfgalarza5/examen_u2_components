@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit';
+import { temas, getTema } from '../styles/themes.js';
 
 export class CareerCard extends LitElement {
   static get properties() {
@@ -9,7 +10,7 @@ export class CareerCard extends LitElement {
     };
   }
 
-  static get styles() {
+ static get styles() {
     return css`
       .fondo {
         position: fixed;
@@ -65,16 +66,23 @@ export class CareerCard extends LitElement {
     this.digito = 1;
   }
 
+  updated(changedProperties) {
+    if (changedProperties.has('digito')) {
+      this.tema = getTema(this.digito);
+    }
+  }
+
   _cerrarModal() {
     this.carrera = null;
   }
 
   render() {
     if (!this.carrera) return html``;
+    const style = temas[this.tema];
     return html`
       <div class="fondo" @click=${this._cerrarModal}>
-        <div class="modal" @click=${e => e.stopPropagation()}>
-          <div class="cabecera">
+        <div class="modal" style="border: ${style.border};" @click=${e => e.stopPropagation()}>
+          <div class="cabecera" style="background: ${style.headerBg}; color: ${style.textColor};">
             ${this.carrera.nombre}
             <button class="boton-cerrar" @click=${this._cerrarModal}>✖</button>
           </div>
