@@ -84,7 +84,11 @@ Muestra la información de una carrera seleccionada en un modal estilizado segú
 <career-card digito="5" .carrera=${carrera}></career-card>
 ```
 
-##  Capturas
+## Capturas
+Componente en accion con digito 1:
+
+![Componente en accion](./docs/Digito1.gif)
+
 Componente en accion con digito 5:
 
-![Componente en accion](./docs/Proyecto.gif)
+![Componente en accion](./docs/Digito5.gif)
