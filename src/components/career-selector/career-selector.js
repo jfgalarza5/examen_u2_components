@@ -12,9 +12,23 @@ export class CareerSelector extends LitElement {
     this.carreras = [];
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+    this.cargarCarreras();
+  }
+
+  async cargarCarreras() {
+    const response = await fetch('./data/carreras.json');
+    this.carreras = await response.json();
+  }
+
   render() {
     return html`
-      <p>Componente CareerSelector</p>
+      <ul>
+        ${this.carreras.map(
+          (carrera) => html`<li>${carrera.nombre}</li>`
+        )}
+      </ul>
     `;
   }
 }
