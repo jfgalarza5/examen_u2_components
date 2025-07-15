@@ -80,8 +80,8 @@ Muestra la información de una carrera seleccionada en un modal estilizado segú
 | 8, 9   | Naranja | Innovación, emprendimiento |
 
 #### Uso
-```
-<career-card digito="5" .carrera=${carrera}></career-card>
+```html
+ <career-card digito=1></career-card>
 ```
 
 ## Capturas
