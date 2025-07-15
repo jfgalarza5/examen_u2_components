@@ -1,6 +1,27 @@
-import { LitElement, html } from 'lit';
+import { LitElement, html, css } from 'lit';
 
 export class CareerSelector extends LitElement {
+  static get styles() {
+    return css`
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        cursor: pointer;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        margin: 0.25rem 0;
+        border-radius: 5px;
+      }
+
+      li:hover {
+        background: #eee;
+      }
+    `;
+  }
+
   static get properties() {
     return {
       carreras: { type: Array }
