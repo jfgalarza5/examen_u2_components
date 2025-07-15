@@ -1,11 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Examen John Galarza</title>
-</head>
-<body>
-  
-</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ESPE Carreras</title>
+    <script type="module" src="./components/career-card/career-card.js"></script>
+    <script type="module" src="./components/career-selector/career-selector.js"></script>
+    <style>
+      body{
+        height: 100vh;
+      }
+      section{
+        margin: auto;
+        padding-top: 50px;
+        width: 30%;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>Carreras de la ESPE</h1>
+      <career-selector></career-selector>
+      <career-card digito=1></career-card>
+    </section>
+
+    <script type="module">
+      const card = document.querySelector('career-card');
+      window.addEventListener('career-selected', (e) => {
+        card.carrera = e.detail;
+      });
+    </script>
+  </body>
 </html>
