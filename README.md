@@ -17,6 +17,24 @@ Este proyecto permite al usuario seleccionar y visualizar informacion detallada 
 └── index.html
 ```
 
+## Instrucciones clonar
+
+### Clonar el repositorio
+
+```bash
+git clone https://github.com/tu-usuario/nombre-repo.git
+cd nombre-repo
+```
+### Instalar dependencias
+```bash
+npm install
+```
+### Ejecutar el proyecto
+```bash
+npm run dev
+```
+
+
 ## Componentes
 
 ### `<career-selector>`
