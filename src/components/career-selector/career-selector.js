@@ -26,10 +26,22 @@ export class CareerSelector extends LitElement {
     return html`
       <ul>
         ${this.carreras.map(
-          (carrera) => html`<li>${carrera.nombre}</li>`
+          (carrera) => html`
+            <li @click=${() => this.seleccionarCarrera(carrera)}>
+              ${carrera.nombre}
+            </li>
+          `
         )}
       </ul>
     `;
+  }
+
+  seleccionarCarrera(carrera) {
+    this.dispatchEvent(new CustomEvent('career-selected', {
+      detail: carrera,
+      bubbles: true,
+      composed: true
+    }));
   }
 }
 
